@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>CSS alapok</title>
+</head>
+<body>
+    <div class="container">
+        <h2>CSS Alapok</h2>
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="pill" href="#szintaktika">Szintaxis</a></li>
+            <li><a data-toggle="pill" href="#szelektor">Választó</a></li>
+            <li><a data-toggle="pill" href="#komment">Megjegyzés</a></li>
+            <li><a data-toggle="pill" href="#szin">Szín</a></li>
+            <li><a data-toggle="pill" href="#hatter">Háttér</a></li>
+        </ul>
+       
+<!--Szakasz választó-->
+    <div class="tab-content">
+        <div  id="szintaktika" class="tab-pane fade in active">
+            <h2>Szintaxis / Syntax</h2>
+            <p>A CSS -szabály egy <span style="color: indianred;">választóból, <br>
+                selector</span> és egy <span style="color: rgb(0, 183, 255)">deklarációs blokkból, declaratin</span> áll.
+            </p>
+            <p>Például jelen esetben: <span style="color:indianred">body <span style="color: rgb(0, 183, 255)">{background-color: black;}</span>
+            </p>
+            <p>Láthatod ebben a formában is: <br>
+            <span style="color:indianred">body{ <br>
+            <span style="color: rgb(0, 183, 255)">background-color: <span style="color:orange">black;</span> <br>
+            <span style="color:indianred">}
+            </p>
+            <p>A választó a stílusolni kívánt HTML elemre mutat, például "body".
+            </p>
+            <p style="color:indianred">body<span style="color:orange">{<-ide, a kapcsos zárójelek közé írjuk a deklarációt-></span>}
+            </p>
+            <p>A deklarációs blokk egy vagy több pontosvesszővel elválasztott <br>
+                deklarációt tartalmaz.
+            </p>
+            <p style="color: rgb(0, 183, 255)">background-color: <span style="color:orange">black;</span>
+            </p>
+            <p>Minden deklaráció tartalmaz egy CSS tulajdonságnevet  <br>
+                (pl: <span style="color: rgb(0, 183, 255)">background-color:</span>) kettősponttal elválasztva <br>
+                és egy értéket (pl: <span style="color:orange"> black;</span>).
+            </p>
+            <p>Több CSS -deklarációt pontosvesszővel választanak el egymástól, <br>
+                a deklarációs blokkokat pedig kapcsos zárójelek veszik körül.
+            </p>
+        </div>
+<!--Szakasz választó-->
+        <div id="szelektor" class="tab-pane fade in active">
+            <h2>Választó / Selectors</h2>
+            <p>A CSS-szelektorok a stílusozni kívánt HTML-elemek „megkeresésére” <br>
+            (vagy kijelölésére) szolgálnak.</p>
+            <p>A CSS-szelektorokat öt kategóriába sorolhatjuk:</p>
+            <dl>
+                <dt>- Egyszerű kiválasztók</dt>
+                <dd>(elemek kiválasztása név, azonosító, osztály alapján)</dd>
+                <dt>- Kombinátorválasztók</dt>
+                <dd>(az elemek kiválasztása a köztük lévő konkrét kapcsolat alapján)</dd>
+                <dt>- Pszeudoosztály szelektorok</dt>
+                <dd>(elemek kiválasztása egy bizonyos állapot alapján)</dd>
+                <dt>- Pszeudoelem-választók</dt>
+                <dd>(egy elem egy részének kijelölése és stílusa)</dd>
+                <dt>- Attribútumválasztók</dt>
+                <dd>(elemek kiválasztása attribútum vagy attribútumérték alapján)</dd>
+            </dl>
+        
+            <p>A CSS elemválasztó</p>
+            <p> Az elemválasztó az elem neve alapján választja ki a HTML elemeket.<br>
+                Példa:<br>
+                Itt az oldal összes "p" eleme középre igazítva lesz, <br>
+                piros szövegszínnel:<br>
+                <span style="color:indianred">p</span><span style="color: rgb(0, 183, 255)">{text-align: center; color: red;}</span></p>
+                <p>Láthatod ebben a formában is:<br>
+                    <span style="color:indianred">p{</span><br>
+                    <span style="color: rgb(0, 183, 255)">text-align:</span>><span style="color:orange">center;</span><br>
+                    <span style="color: rgb(0, 183, 255)">color:</span><span style="color:orange">red;</span> <br>
+                    <span style="color:indianred">}</span></p>
+
+            <p>A CSS azonosító választó </p>
+            <p>Az azonosítóválasztó egy HTML elem id attribútumát használja <br>
+            egy adott elem kiválasztásához. Egy elem azonosítója egyedi az oldalon belül, <br>
+            így az id választó egy egyedi elem kiválasztására szolgál! <br>
+            Egy adott azonosítójú elem kiválasztásához írjon be egy hash (#) karaktert, <br>
+            amelyet az elem azonosítója követ.<br>
+            Példa <br>
+            Az alábbi CSS-szabályt alkalmazzuk az id="para1" HTML-elemre:<br>
+                <span style="color:indianred">#para1</span><span style="color: rgb(0, 183, 255)">{text-align: center; color: red;}</span></p>
+                <p>Láthatod ebben a formában is:<br>
+                    <span style="color:indianred">#para1{</span><br>
+                    <span style="color: rgb(0, 183, 255)">text-align:</span><span style="color:orange">center;</span><br>
+                    <span style="color: rgb(0, 183, 255)">color:</span><span style="color:orange">red;</span> <br>
+                    <span style="color:indianred">}</span></p>
+
+            <p>A CSS osztályválasztó </p>
+            <p>Az osztályválasztó kiválasztja a HTML-elemeket egy adott osztályattribútummal.<br>
+            Egy adott osztályhoz tartozó elemek kiválasztásához írjon be egy pontot (.), <br>
+            majd az osztály nevét.<br>
+            Példa <br>
+            Ebben a példában az összes class="center" karakterláncú HTML-elem piros <br>
+            és középre igazított lesz:<br>
+                <span style="color:indianred">.center</span><span style="color: rgb(0, 183, 255)">{text-align: center; color: red;}</span></p>
+                <p>Láthatod ebben a formában is:<br>
+                    <span style="color:indianred">.center{</span><br>
+                    <span style="color: rgb(0, 183, 255)">text-align:</span><span style="color:orange">center;</span><br>
+                    <span style="color: rgb(0, 183, 255)">color:</span><span style="color:orange">red;</span><br>
+                    <span style="color:indianred">}</span><br>
+                    Példa <br>
+                    Ebben a példában csak a "p" class="center" elemek lesznek piros és <br>
+                    középre igazítotva:<br>
+                    <span style="color:indianred">p.center</span><span style="color: rgb(0, 183, 255)">{text-align: center; color: red;}</span><br>
+                    Láthatod ebben a formában is:<br>
+                    <span style="color:indianred">p.center{</span><br>
+                    <span style="color: rgb(0, 183, 255)">text-align:</span><span style="color:orange">center;</span><br>
+                    <span style="color: rgb(0, 183, 255)">color:</span><span style="color:orange">red;</span><br>
+                    <span style="color:indianred">}</span></p>
+        
+            <p>A CSS univerzális választó </p>
+            <p>Az univerzális választó (*) kijelöli az összes HTML elemet az oldalon.<br>
+            Példa <br>
+            Az alábbi CSS-szabály hatással lesz az oldal minden HTML-elemére:<br>
+                <span style="color:indianred">*</span><span style="color: rgb(0, 183, 255)">{text-align: center; color: blue;}</span><br>
+                Láthatod ebben a formában is:<br>
+                    <span style="color:indianred">*{</span><br>
+                    <span style="color: rgb(0, 183, 255)">text-align:</span><span style="color:orange">center;</span><br>
+                    <span style="color: rgb(0, 183, 255)">color:</span><span style="color:orange">blue;</span><br>
+                    <span style="color:indianred">}</span></p>
+
+            <p>A CSS csoportosítási választó <br>
+            A csoportosítási választó kiválasztja az összes HTML-elemet azonos stílusdefiníciókkal. <br>
+            Nézze meg a következő CSS kódot (a h1, h2 és p elemek azonos stílusdefiníciókkal rendelkeznek):</p>
+            <p style="color:indianred">h1<span style="color: rgb(0, 183, 255)">{text-align: center; color: blue;}</span></p>
+            <p style="color:indianred">h2<span style="color: rgb(0, 183, 255)">{text-align: center; color: blue;}</span></p>
+            <p style="color:indianred">p<span style="color: rgb(0, 183, 255)">{text-align: center; color: blue;}</span></p>
+            <p>Jobb lesz csoportosítani a kiválasztókat, minimalizálni a kódot. <br>
+                A kijelölők csoportosításához vesszővel válassza el az egyes választókat. <br>
+                Példa <br>
+                Ebben a példában a fenti kódból csoportosítottuk a kiválasztókat:</p>
+                <p style="color:indianred">h1, h2, p <span style="color: rgb(0, 183, 255)">{text-align: center; color: blue;}</span></p>
+                <p>Láthatod ebben a formában is:</p>
+                    <p style="color:indianred">h1, h2, p {</p>
+                    <p style="color: rgb(0, 183, 255)">text-align: <span style="color:orange">center;</span> </p>
+                    <p style="color: rgb(0, 183, 255)">color: <span style="color:orange">blue;</span> </p>
+                    <p style="color:indianred">}</p>
+        </div>
+<!--Szakasz választó-->
+        <div id="komment" class="tab-pane fade in active">
+            <h2>Megjegyzés / Comments</h2>
+            <p>CSS megjegyzések</p>
+            <p>A CSS megjegyzések nem jelennek meg a böngészőben, de segíthetnek dokumentálni a forráskódot. <br>
+                A megjegyzések a kód magyarázatára szolgálnak, és segíthetnek a forráskód későbbi szerkesztésénél. <br>
+                A böngészők figyelmen kívül hagyják a megjegyzéseket. <br>
+                Az style elemen belül egy CSS megjegyzés kerül elhelyezésre, amely a következővel kezdődik <span style="color:green">/*</span> és ezzel végződik <span style="color:green">*/</span>:</p>
+                <p>Példa: <br>
+                    <span style="color:green">/* This is a single-line comment */</span> <br>
+                    <span style="color:indianred"> p {</span> <br>
+                    <span style="color: rgb(0, 183, 255)">color: </span><span style="color:orange">red; </span> <br>
+                    <span style="color:indianred">}</span>
+                    </p>
+        </div>
+<!--Szakasz választó-->
+        <div id="szin" class="tab-pane fade in active">
+            <h2>Szín / Color</h2>
+            <p>CSS színek <br>
+                A színek megadása előre meghatározott színnevek vagy RGB, HEX, HSL, RGBA, HSLA értékek használatával történik. <br>
+                <br>
+                CSS színnevek <br>
+                A CSS-ben a szín egy előre meghatározott színnév használatával adható meg, CSS/HTML 140 szabványos színnevet támogat. <br>
+                <span style="color:red">red</span>, <span style="color:yellow">yellow</span>, <span style="color:brown">brown</span>, <span style="color:blue">blue</span>, <span style="color:white">white</span>, <span style="color:black; background-color: white;">black</span>, ... <br>
+                <br>
+                CSS színértékek <br>
+                A CSS-ben a színek RGB-, HEX-, HSL-, RGBA- és HSLA-értékekkel is megadhatók. <br>
+                <br>
+                Megegyezik a <span style="color: rgb(255, 99, 71)">"paradicsom"</span> színnévvel: <br>
+                <span style="color: rgb(255, 99, 71)">rgb(255, 99, 71)</span> <br>
+                vagy <br>
+                <span style="color: rgb(255, 99, 71)">#ff6347</span> <br>
+                vagy <br>
+                <span style="color: rgb(255, 99, 71)">hsl(9, 100%, 64%)</span> <br>
+                <br>
+                Hol használjuk? <br>
+                <br>
+                CSS háttérszín (background-color), beállíthatja a HTML elemek háttérszínét<br>
+                <p><span style="color:indianred">body<span style="color: rgb(0, 183, 255)">{background-color: black;}</span></p>
+                <p>CSS szöveg színe (color), beállíthatja a szöveg színét</p>
+                <p><span style="color:indianred">h1<span style="color: rgb(0, 183, 255)">{color: yellow;}</span></p>
+                <p>CSS szegélyszín (border), beállíthatja a szegélyek színét.</p>
+                <p><span style="color:indianred">h1<span style="color: rgb(0, 183, 255)">{border: red;}</span></p>
+
+            </p>
+        </div>
+<!--Szakasz választó-->
+        <div id="hatter" class="tab-pane fade in active">
+            <h2>Háttér / Backgrounds</h2>
+            <p>CSS hátterek <br>
+                A CSS-háttér tulajdonságai az elemek háttéreffektusainak hozzáadására szolgálnak.</p>
+            <ol>
+                <li>background-color</li>
+                <li>background-image</li>
+                <li>background-repeat</li>
+                <li>background-attachment</li>
+                <li>background-position</li>
+                <li>background (rövid tulajdonság)</li>
+            </ol>
+            <br>
+            CSS háttérszín <br>
+            A background-colortulajdonság egy elem háttérszínét adja meg. <br>
+            Példa <br>
+            Az oldal háttérszíne a következőképpen van beállítva: </p>
+            <p><span style="color:indianred">body<span style="color: rgb(0, 183, 255)">{background-color: black;}</span></p>
+            <br>
+            <p> A CSS-ben a színt leggyakrabban a következők határozzák meg: <br>
+                érvényes színnév - például "piros" <br>
+                HEX érték – például "#ff0000" <br>
+                RGB-érték – például „rgb(255,0,0)”</p>
+            <br>
+            <p>CSS háttérkép <br>
+                A background-image tulajdonság egy elem háttereként használandó képet határoz meg. <br>
+                Alapértelmezés szerint a kép ismétlődik, így a teljes elemet lefedi. <br>
+                Példa: <br>
+                <span style="color:indianred">body<span style="color: rgb(0, 183, 255)">{background-image: sarkany.jpg;}</span></p>
+                <p>Megjegyzés: Ha háttérképet használ, olyan képet használjon, amely nem zavarja a szöveget.</p>
+                <p>A háttérkép bizonyos elemekhez is beállítható, például a p elemhez: <br>
+                <span style="color:indianred">p<span style="color: rgb(0, 183, 255)">{background-image: sarkany.jpg;}</span></p>
+            <br>
+            <p>CSS- háttérkép ismétlése <br>   
+                Alapértelmezés szerint a background-imagetulajdonság vízszintesen és függőlegesen is megismétli a képet. <br>
+                Egyes képeket csak vízszintesen vagy függőlegesen kell megismételni, különben furcsán néznek ki. <br>
+                Tipp: Egy kép függőleges ismétléséhez állítsa bebackground-repeat: repeat-y; <br>
+                CSS háttérkép ismétlés lehetősége a nincs ismétlés. <br>
+                A háttérkép csak egyszeri megjelenítését is meghatározza a background-repeattulajdonság. <br>
+                Példa: <br>
+                Csak egyszer jelenítse meg a háttérképet: <br>
+                <span style="color:indianred">body {</span> <br>
+                <span style="color: rgb(0, 183, 255)">background-image: sarkany.jpg; background-repeat: no-repeat; </span> <br>
+                <span style="color:indianred">}</span>
+            </p>
+            <br>
+            <p>CSS háttérpozíció <br>
+                A background-positiontulajdonság a háttérkép pozíciójának megadására szolgál. <br>
+                Példa: <br>
+                Helyezze el a háttérképet a jobb felső sarokban: <br>
+                <span style="color:indianred">body {</span> <br>
+                <span style="color: rgb(0, 183, 255)">background-image: sarkany.jpg; <br>
+                background-repeat: no-repeat; <br>
+                background-position: right top;</span> <br>
+                <span style="color:indianred">}</span>
+            </p>
+            <br>
+            <p>CSS háttérmelléklet <br>
+                A background-attachment tulajdonság megadja, hogy a háttérképet görgetni kell-e vagy rögzíteni kell (nem fog gördülni az oldal többi részével). <br>
+                Példa: <br>
+                Adja meg, hogy a háttérképet rögzíteni kell: <br>
+                <span style="color:indianred">body {</span> <br>
+                    <span style="color: rgb(0, 183, 255)">background-image: sarkany.jpg; <br>
+                    background-repeat: no-repeat; <br>
+                    background-position: right top; <br>
+                    background-attachment: fixed;</span> <br>
+                    <span style="color:indianred">}</span></p>
+                <p>Adja meg, hogy a háttérképnek az oldal többi részével együtt kell gördülnie:  <br>
+                    <span style="color:indianred">body {</span> <br>
+                    <span style="color: rgb(0, 183, 255)">background-image: sarkany.jpg; <br>
+                    background-repeat: no-repeat; <br>
+                    background-position: right top; <br>
+                    background-attachment: scroll;</span> <br>
+                    <span style="color:indianred">}</span></p>  
+            <br>
+            <p>CSS-háttér – Gyorsírás tulajdonság <br>
+                A kód lerövidítéséhez lehetőség van az összes háttértulajdonság megadására egyetlen tulajdonságban. Ezt gyorsírási tulajdonságnak nevezik. <br>
+                Példa, ahogy eddig írtuk: <br>
+                <span style="color:indianred">body {</span> <br>
+                    <span style="color: rgb(0, 183, 255)">background-image: sarkany.jpg; <br>
+                    background-repeat: no-repeat; <br>
+                    background-position: right top; <br>
+                    background-attachment: fixed;</span> <br>
+                    <span style="color:indianred">}</span></p>
+            <p> Példa, gyorsírás tulajdonsággal, background: <br>
+                <span style="color:indianred">body {</span> <br>
+                    <span style="color: rgb(0, 183, 255)"> black sarkany.jpg no-repeat fixed right top;</span> <br>
+                        <span style="color:indianred">}</span></p>       
+            <p>A gyorsírás tulajdonság használatakor a tulajdonságértékek sorrendje a következő: </p>
+            <ol>
+                <li>background-color</li>
+                <li>background-image</li> 
+                <li>background-repeat</li> 
+                <li>background-attachment</li> 
+                <li>background-position</li> 
+            </ol>
+            <p>
+            Nem számít, ha valamelyik ingatlanérték hiányzik, ha a többi ebben a sorrendben van.
+            </p>
+        </div>
+    </div>
+    </div>
+<!--Szakasz választó-->        
+</body>
+</html>
